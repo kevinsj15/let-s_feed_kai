@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>開くんにごはんをあげよう！</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=M+PLUS+1p"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+
+  <body>
+    <!-- ヘッダー部分 -->
+    <header>
+      <!-- ヘッダー画像 -->
+      <div class="image-banner">
+        <img src="./img/top/header.jpeg" alt="banner image" />
+        <!-- ヘッダー内の文字 -->
+        <div class="centered-text">開くんにごはんを上げよう！</div>
+      </div>
+    </header>
+
+    <!-- 本体部分 -->
+    <main>
+      <!-- ルール説明エリア -->
+      <div class="setsumei-container">
+        <!-- 説明画像(左) -->
+        <img
+          src="./img/top/chousen.jpeg"
+          class="setsumei-image"
+          alt="setsumei"
+        />
+        <!-- 説明テキスト(右) -->
+        <div class="setsumei-text">
+          今日の開くんの気分に合わせたごはんを選ぼう！<br />
+          <br />
+          当たりなら次の日へ、まあまあならもう一回、<br />
+          外れてしまったら1日目からやり直しになるよ。<br />
+          <br />
+          合計の当たり回数と、連続の当たり回数を達成<br />
+          してご褒美をもらおう！
+        </div>
+      </div>
+
+      <!-- ふわっと浮かび上がるスクリプト -->
+      <!-- !未だできていない！ -->
+
+      <!-- 食材選択トップ -->
+      <div class="game-top">何をあげるか選ぼう！</div>
+
+      <!-- 食材選択画像部分 -->
+      <div class="game-container">
+        <div class="shokuzai">
+          <div class="shokuzai-img">
+            <img
+              src="./img//shokuzai/okayu.jpg"
+              alt="グー"
+              onclick="playGame('グー')"
+              onmouseover="this.src='./img/shokuzai/okayu_hover.jpg'"
+              onmouseout="this.src='./img/okayu.jpg'"
+            />
+            <div class="shokuzai-txt">おかゆ</div>
+          </div>
+          <div class="shokuzai-img">
+            <img
+              src="./img/shokuzai/kabocha.jpg"
+              alt="チョキ"
+              onclick="playGame('チョキ')"
+              onmouseover="this.src='./img/shokuzai/kabocha_hover.jpg'"
+              onmouseout="this.src='./img/kabocha.jpg'"
+            />
+            <div class="shokuzai-txt">かぼちゃ</div>
+          </div>
+          <div class="shokuzai-img">
+            <img
+              src="./img/shokuzai/shiromizakana.jpg"
+              alt="パー"
+              onclick="playGame('パー')"
+              onmouseover="this.src='./img/shokuzai/shiromizakana_hover.jpg'"
+              onmouseout="this.src='./img/shiromizakana.jpg'"
+            />
+            <div class="shokuzai-txt">しろみざかな</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 結果表示フロートウィンドウ -->
+      <div class="result-container" id="resultContainer">
+        <div class="result-box">
+          <span class="close-button" onclick="closeResult()">閉じる</span>
+          <div class="result-img">
+            <img id="resultImage" alt="Result Image" />
+          </div>
+          <br />
+          <div id="resultTitle"></div>
+        </div>
+      </div>
+
+      <!-- 各正解回数表示部分 -->
+      <!-- 各正解回数表示部分 -->
+      <div class="victory-result-container">
+        <!-- 合計正解回数表示部分 -->
+        <div class="total-result-box-container">
+          <div class="total-result-text-box">合計正解回数</div>
+          <div class="total-result-number-box">
+            <span id="totalCount">0</span>
+          </div>
+        </div>
+        <!-- 連続正解回数表示部分 -->
+        <div class="total-result-box-container">
+          <div class="total-result-text-box">連続正解回数</div>
+          <div class="total-result-number-box">
+            <span id="consecutiveCount">0</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="table-container">
+        <!-- 合計正解回数表 -->
+        <div class="table-item">
+          <div class="table-top-text">合計正解回数の達成状況</div>
+          <table class="achievement-table">
+            <tr>
+              <th>回数</th>
+              <th>リンク</th>
+            </tr>
+            <tr>
+              <td>1回</td>
+              <td id="achievementLink5"></td>
+            </tr>
+            <tr>
+              <td>5回</td>
+              <td id="achievementLink6"></td>
+            </tr>
+            <tr>
+              <td>10回</td>
+              <td id="achievementLink7"></td>
+            </tr>
+            <tr>
+              <td>20回</td>
+              <td id="achievementLink8"></td>
+            </tr>
+          </table>
+        </div>
+        <!-- 連続正解回数表 -->
+        <div class="table-item">
+          <div class="table-top-text">連続正解回数の達成状況</div>
+          <table class="achievement-table">
+            <tr>
+              <th>回数</th>
+              <th>リンク</th>
+            </tr>
+            <tr>
+              <td>1回</td>
+              <td id="achievementLink1"></td>
+            </tr>
+            <tr>
+              <td>2回</td>
+              <td id="achievementLink2"></td>
+            </tr>
+            <tr>
+              <td>5回</td>
+              <td id="achievementLink3"></td>
+            </tr>
+            <tr>
+              <td>10回</td>
+              <td id="achievementLink4"></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- フッターセクション -->
+      <footer class="footer">
+        <div class="footer-content">
+          <p>2023 Kevin James, All Rights Reserved</p>
+        </div>
+      </footer>
+
+      <!--JS リファー -->
+      <script src="script.js"></script>
+    </main>
+  </body>
+</html>

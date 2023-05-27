@@ -1,0 +1,205 @@
+/* 全体設定 */
+body {
+background-color: #fcfade;
+ font-family: "M PLUS 1p";
+}
+
+/* バナー部分 */
+.image-banner {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+.image-banner img {
+  width: 100%;
+  height: auto;
+}
+.image-banner .centered-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -40%);
+  color: white;
+  font-size: 3.2vw;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+/* 説明文 */
+.setsumei-container {
+  display: flex;
+  width: 70vw;
+  margin-top: 3vw;
+  margin-left: 15vw;
+  margin-right: 15vw;
+  align-items: center;
+  background-color:#fbffbe ;
+}
+
+/* 説明画像 */
+.setsumei-image {
+  height: 30vw;
+  width: auto;
+}
+.setsumei-text {
+  margin-left: 2vw;
+  font-size: 2vw;
+}
+/* 説明文終わり */
+
+/* 食材選択エリア */
+.game-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  
+}
+.game-top {
+  font-size: 3vw;
+  font-weight: bold;
+  margin-top: 2vw;
+  margin-bottom: 1vw;
+  text-align: center;
+  
+}
+.shokuzai {
+  width: 70vw;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.shokuzai-img {
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.shokuzai-img img {
+  height: auto;
+  width: 20vw;
+  outline: auto;
+  outline-color: rgb(102, 102, 102);
+  /* !!カーソルを乗せたときに違う画像が表示されるようにしたい */
+}
+.shokuzai-txt {
+  text-align: center;
+  font-size: 3vw;
+  font-weight: 600;
+}
+/* 食材選択エリア終わり */
+
+/* 結果表示フロート */
+.result-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 3vw;
+  display:none;
+}
+
+.result-box {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50vw;
+  background-color: #f9ffc4;
+  outline: auto;
+  outline-color: rgb(102, 102, 102);
+  padding: 5vw;
+  text-align: center;
+}
+
+#resultImage {
+  max-width: 40vw;
+  max-height: 40vh;
+}
+
+.close-button {
+  position: absolute;
+  top: 2vw;
+  right: 2vw;
+  font-size: 2vw;
+  cursor: pointer;
+}
+/* 結果表示フロート終わり */
+
+/* 合計勝利回数表示部分 */
+.victory-result-container {
+  width: 70%;
+  margin-left: 15%;
+  margin-right:15%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 1vw;
+}
+
+.total-result-box-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.total-result-text-box {
+  font-size: 4vw;
+}
+
+.total-result-number-box {
+  font-size: 4vw;
+  font-weight: bold;
+  border: 0.5vw solid #838383;
+  width: 8vw;
+  height: 8vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* 合計勝利回数表示部分終わり */
+
+/* 表部分 */
+.table-top-text{
+  font-size: 2.5vw;
+}
+.table-container {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  margin-bottom: 3vh;
+  margin-top: 3vh;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+.table-item {
+  width: 45%;
+  text-align: center;
+}
+.achievement-table {
+  margin-top: 0.5vw;
+  text-align: center;
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 2vw;  
+}
+.achievement-table th,
+.achievement-table td {
+  padding: 1vw 2vw;
+  border: 0.5vw solid #838383;
+}
+
+/* フッター */
+.footer {
+  background-color: #282828;
+  padding:1vw;
+  margin-bottom: none;
+}
+
+.footer-content {
+  text-align: center;
+  font-size: 1vw;
+  color: #ccc;
+}
